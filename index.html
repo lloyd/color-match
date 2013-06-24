@@ -1,0 +1,27 @@
+<head>
+<style> body { width: 100%; height: 100%; }</style>
+<body>
+Click here: <input class="color" value="66ff00">
+<h2> And this is the associated text color </h2>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jscolor/jscolor.js"></script>
+<script src="js/rgbcolor.js"></script>
+<script>
+document.body.style.backgroundColor = '#6f0';
+
+$('input.color').change(function() {
+  var c = '#' + $(this).val();
+  document.body.style.backgroundColor = c;
+  // now compute the foreground color
+  function calcBrightness(color) {
+    return Math.sqrt(
+      color.r * color.r * .299 +
+      color.g * color.g * .587 +
+      color.b * color.b * .114);
+  }
+  var b = calcBrightness(new RGBColor(c));
+  document.body.style.color = (b < 120 ? '#fff' : '#000');
+});
+
+</script>
