@@ -1,17 +1,16 @@
 <head>
 <style> body { width: 100%; height: 100%; }</style>
 <body>
-Click here: <input class="color" value="66ff00">
+<img id="theImage"/>
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/jscolor/jscolor.js"></script>
 <script>
-/*
 var THE_IMAGE = 'i/libravatar-logo.png';
 var i = new Image();
 i.crossOrigin = '';
 i.src = THE_IMAGE;
-//document.getElementById('theImage').src = THE_IMAGE;
+document.getElementById('theImage').src = THE_IMAGE;
 i.onload = function() {
   var can = document.createElement('canvas');
   var ctx = can.getContext('2d');
@@ -25,8 +24,6 @@ i.onload = function() {
   console.log(c);
   document.body.style.backgroundColor = c;
 };
-*/
-document.body.style.backgroundColor = c;
 
 $('input.color').change(function() {
   console.log("meh", $(this).val());
